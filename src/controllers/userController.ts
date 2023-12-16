@@ -1,6 +1,7 @@
 import { prisma } from "../database/prisma";
 import { Request, Response } from "express";
 import bcrypt from 'bcrypt'
+import { BadRequestError } from "../helpers/apiErrors";
 
 export async function signUp(req: Request, res: Response) {
     const { name, username, email, password } = req.body
@@ -12,25 +13,22 @@ export async function signUp(req: Request, res: Response) {
     })
 
     if (userExists) {
-        return res.status(400).send('User already exists.')
+        throw new BadRequestError('User already exists.')
     }
 
     const hashPass = await bcrypt.hash(password, 10)
 
-    try {
-        const user = await prisma.user.create({
-            data: {
-                name,
-                username,
-                email,
-                password: hashPass
-            }
-        })
+    const user = await prisma.user.create({
+        data: {
+            name,
+            username,
+            email,
+            password: hashPass
+        }
+    })
 
-        return res.status(200).send('User created successfully.')
-    } catch (error) {
-        return res.status(400).send(error)
-    }
+    return res.status(200).send('User created successfully.')
+   
 }
 
 export async function listUsers(req: Request, res: Response) {
