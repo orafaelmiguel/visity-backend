@@ -29,9 +29,3 @@ export async function signUp(req: Request, res: Response) {
 
     return res.status(200).send('User created successfully.')
 }
-
-export async function listUsers(req: Request, res: Response) {
-    const allUsers = await prisma.user.findMany()
-
-    return res.status(200).send(allUsers)
-}
