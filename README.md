@@ -13,3 +13,21 @@ Currently working with:
 - [Jest](https://jestjs.io/pt-BR/docs/getting-started)
 - [JWT](https://jwt.io/introduction)
 - [Express](https://expressjs.com/pt-br/)
+
+Testable application, seeking a clean and easy-to-maintain code standard, for educational purposes.
+
+### Running Server 💻
+
+```bash
+# Clone this repository
+$ git clone https://github.com/orafaelmiguel/visity-backend.git
+
+# Install dependencies
+$ npm install
+
+# Run the application in development mode
+$ npm run dev
+```
+The server will start on the port: 3000.
+
+Use software to test API functionalities such as Insomnia or Postman.
