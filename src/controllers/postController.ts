@@ -1,6 +1,5 @@
 import { prisma } from "../database/prisma";
 import { Request, Response } from "express";
-import { uploadsConfig } from "../middlewares/uploadMiddleware";
 
 export async function createPost(req: Request, res: Response) {
     const { content } = req.body
