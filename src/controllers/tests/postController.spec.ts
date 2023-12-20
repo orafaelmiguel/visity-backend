@@ -15,7 +15,7 @@ describe('Post CRUD', () => {
     it('should be able to create a post', async () => {
         const res = await request(app)
             .post('/post')
-            .send({ content: 'content' })
+            .send({ content: 'content', imageUrl: 'imageurl' })
             .set('authorization', `Bearer ${token}`)
         .expect(200)
     })
