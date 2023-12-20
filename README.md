@@ -13,6 +13,7 @@ Currently working with:
 - [Jest](https://jestjs.io/pt-BR/docs/getting-started)
 - [JWT](https://jwt.io/introduction)
 - [Express](https://expressjs.com/pt-br/)
+- [NPM](https://docs.npmjs.com/)
 
 Testable application, seeking a clean and easy-to-maintain code standard, for educational purposes.
 
