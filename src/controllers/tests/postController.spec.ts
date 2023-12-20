@@ -9,8 +9,8 @@ describe('Post CRUD', () => {
             email: 'email@email.com',
             password: 'password'
         });
-        token = res.body.token;
-    });
+        token = res.body.token
+    })
 
     it('should be able to create a post', async () => {
         const res = await request(app)
