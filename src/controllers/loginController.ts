@@ -3,7 +3,7 @@ import { Request, Response } from "express"
 import 'dotenv/config'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import { BadRequestError, notFoundError } from "../helpers/apiErrors"
+import { BadRequestError} from "../helpers/apiErrors"
 
 export async function loginUser(req: Request, res: Response) {
     const { email, password } = req.body
