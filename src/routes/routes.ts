@@ -5,8 +5,11 @@ import { deleteUsers, listUsers } from "../controllers/userController"
 import { authMiddleware } from "../middlewares/authMiddleware"
 import { getProfile } from "../controllers/profileController"
 import { createPost } from "../controllers/postController"
+import { uploadsConfig } from "../middlewares/uploadMiddleware";
+import multer from 'multer';
 
 const router = Router()
+const upload = multer(uploadsConfig);
 
 router.post('/signup', signUp)
 
@@ -17,6 +20,6 @@ router.post('/login', loginUser)
 
 router.get('/profile', authMiddleware, getProfile)
 
-router.post('/post', authMiddleware, createPost)
+router.post('/post', upload.single('image'), authMiddleware, createPost)
 
 export { router }
