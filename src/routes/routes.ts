@@ -4,7 +4,7 @@ import { loginUser } from "../controllers/loginController"
 import { deleteUsers, listUsers } from "../controllers/userController"
 import { authMiddleware } from "../middlewares/authMiddleware"
 import { getProfile } from "../controllers/profileController"
-import { createPost } from "../controllers/postController"
+import { createPost} from "../controllers/postController"
 import { uploadsConfig } from "../middlewares/uploadMiddleware";
 import multer from 'multer';
 
