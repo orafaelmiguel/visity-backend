@@ -17,7 +17,12 @@ export async function getProfile(req: Request, res: Response) {
                 select: {
                     content: true,
                     imageUrl: true,
-                    createdAt: true
+                    createdAt: true,
+                }
+            },
+            Comment: {
+                select: {
+                    content: true
                 }
             }
         }
