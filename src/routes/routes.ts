@@ -8,6 +8,7 @@ import { createPost, deletePost} from "../controllers/postController"
 import { uploadsConfig } from "../middlewares/uploadMiddleware"
 import { likePost, unlikePost } from "../controllers/likeController"
 import { createComment } from "../controllers/commentController"
+import { feed } from "../controllers/feedControllers"
 import multer from 'multer';
 
 const router = Router()
@@ -28,5 +29,7 @@ router.post('/post/:postId', authMiddleware, likePost)
 router.delete('/post/:postId', authMiddleware, unlikePost)
 
 router.post('/comment/:postId', authMiddleware, createComment)
+
+router.get('/feed', authMiddleware, feed)
 
 export { router }
